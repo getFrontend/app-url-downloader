@@ -1,8 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# URL Downloader App
+
+A modern web application for downloading files from URLs and creating a ZIP archive. Built with Next.js, React, and Tailwind CSS.
+
+![URL Downloader Logo](/public/app-preview.png)
+
+## Features
+
+- 🔗 Download files from multiple URLs simultaneously
+- 📦 Automatically create ZIP archives of downloaded files
+- 🖼️ Convert images to PNG format when needed
+- 🌓 Dark/Light theme support
+- 🔄 CORS bypass using multiple proxy servers
+- 📱 Responsive design for all devices
+
+## How It Works
+
+1. Enter a list of URLs in the format: `url, filename`
+2. The application downloads each file, handling CORS restrictions
+3. Files are processed and packaged into a ZIP archive
+4. Download the complete archive with a single click
+
+## Technology Stack
+
+- **Framework**: Next.js 15.3
+- **UI Library**: React 19
+- **Styling**: Tailwind CSS 4.1
+- **File Processing**: JSZip for archive creation
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -10,27 +47,31 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage Examples
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The application accepts URLs in the following format:
 
-## Learn More
+```
+https://example.com/image.jpg, my-image
+https://example.com/document.pdf, important-document
+```
 
-To learn more about Next.js, take a look at the following resources:
+Each line should contain a URL and a filename separated by a comma.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `/src/components` - React components
+- `/src/utils` - Utility functions for file processing
+- `/src/types` - TypeScript type definitions
+- `/public` - Static assets
 
-## Deploy on Vercel
+## Key Components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **DownloaderService** - Main application component
+- **FileDownloader** - Handles file downloads with retry logic and proxy support
+- **ArchiveCreator** - Creates ZIP archives from downloaded files
+- **ImageConverter** - Converts images to PNG format when needed

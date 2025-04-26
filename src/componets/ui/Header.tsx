@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { Download, Moon, Sun } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 import { useTheme } from '../theme/ThemeProvider';
+import Image from 'next/image';
 
 const Header: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -17,7 +18,7 @@ const Header: React.FC = () => {
     return (
       <header className="flex justify-between items-center py-6">
         <div className="flex items-center space-x-2">
-          <Download className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+          <Image src="/logo-url-downloader.png" alt="Logo" width={32} height={32} />
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
             <span className="text-blue-600 dark:text-blue-400">URL</span> Downloader
           </h1>
@@ -35,7 +36,7 @@ const Header: React.FC = () => {
   return (
     <header className="flex justify-between items-center py-6">
       <div className="flex items-center space-x-2">
-        <Download className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+      <Image src="/logo-url-downloader.png" alt="Logo" width={32} height={32} />
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
           <span className="text-blue-600 dark:text-blue-400">URL</span> Downloader
         </h1>
